@@ -70,6 +70,7 @@ const WordCloudComponent = () => {
             shrinkToFit: true,
             minSize: 6,
             classes: 'word-cloud-item',
+            fontFamily: 'Bagel Fat One',
         };
 
         WordCloud(canvasRef.current, options);
@@ -113,6 +114,8 @@ const WordCloudComponent = () => {
             <canvas ref={canvasRef} width="1000" height="1000"></canvas>
 
             <style jsx>{`
+              @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Moirai+One&family=Song+Myung&display=swap');
+                
                 .flex {
                     margin-bottom: 20px;
                 }
@@ -128,6 +131,9 @@ const WordCloudComponent = () => {
                     border: none;
                     border-radius: 3px;
                     cursor: pointer;
+                }
+                body, h2, p, input, .btn {
+                  //font-family: 'Pretendard', sans-serif;
                 }
             `}</style>
         </>
