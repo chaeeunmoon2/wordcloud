@@ -89,7 +89,12 @@ const WordCloudComponent = () => {
             weightFactor: 14,
             rotateRatio: 0,
             rotationSteps: 2,
-            shape: "circle",
+            shape: function(theta) {
+                // 가로 타원의 방정식
+                let a = 2; // 가로 방향으로 더 늘어나는 비율
+                let b = 1; // 세로 방향 비율
+                return 1 / Math.sqrt((a * Math.sin(theta))**2 + (b * Math.cos(theta))**2);
+            },
             ellipticity: 1.5,
             shrinkToFit: true,
             minSize: 6,
@@ -135,7 +140,7 @@ const WordCloudComponent = () => {
                 <p>기본은 19개 keyword로 구성</p>
                 <p>카운트 값은 1 ~ 15까지 랜덤으로 구성</p>
             </div>
-            <canvas ref={canvasRef} width="1000" height="1000"></canvas>
+            <canvas ref={canvasRef} width="1000" height="800"></canvas>
 
             <style jsx>{`
               @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Moirai+One&family=Song+Myung&display=swap');
