@@ -29,7 +29,7 @@ const keywords = [
 ];
 
 // 기본 JSON 데이터
-const jsonData = [
+const jsonData2 = [
     { "word": "호기심", "count": 11 },
     { "word": "공룡", "count": 1 },
     { "word": "가족", "count": 4 },
@@ -51,6 +51,30 @@ const jsonData = [
     { "word": "수다쟁이", "count": 3 }
 ];
 
+const jsonData = [
+    {"word": "호기심", "count": 7},
+    {"word": "역할극", "count": 7},
+    {"word": "상상력", "count": 7},
+    {"word": "자주성", "count": 5},
+    {"word": "Active", "count": 5},
+    {"word": "적극성", "count": 4},
+    {"word": "사회성", "count": 4},
+    {"word": "부끄러움", "count": 4},
+    {"word": "모험", "count": 4},
+    {"word": "가족", "count": 4},
+    {"word": "창의성", "count": 3},
+    {"word": "장난감", "count": 3},
+    {"word": "수다쟁이", "count": 3},
+    {"word": "동물", "count": 3},
+    {"word": "창의력", "count": 2},
+    {"word": "집중력", "count": 2},
+    {"word": "노래", "count": 2},
+    {"word": "친구", "count": 1},
+    {"word": "책", "count": 1},
+    {"word": "규칙", "count": 1},
+    {"word": "공룡", "count": 1}
+];
+
 const WordCloudComponent = () => {
     const canvasRef = useRef(null);
     const [wordList, setWordList] = useState(jsonData); // 기본 값으로 jsonData 사용
@@ -70,7 +94,7 @@ const WordCloudComponent = () => {
             shrinkToFit: true,
             minSize: 6,
             classes: 'word-cloud-item',
-            fontFamily: 'Bagel Fat One',
+            // fontFamily: 'Bagel Fat One',
         };
 
         WordCloud(canvasRef.current, options);
