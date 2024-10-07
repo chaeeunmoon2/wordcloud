@@ -135,7 +135,7 @@ const WordCloudComponent = () => {
         const options = {
             list: words,
             gridSize: 10,
-            weightFactor: 8,
+            weightFactor: weightFactor,
             rotateRatio: 0,
             rotationSteps: 2,
             shape: function(theta) {
