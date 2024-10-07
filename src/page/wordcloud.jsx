@@ -148,7 +148,7 @@ const WordCloudComponent = () => {
             // shrinkToFit: true,
             minSize: 6,
             classes: 'word-cloud-item',
-            // fontFamily: 'Bagel Fat One',
+            fontFamily: 'UhBeeSe_hyun',
         };
 
         WordCloud(canvasRef.current, options);
@@ -219,8 +219,13 @@ const WordCloudComponent = () => {
             <canvas ref={canvasRef} width="1000" height="1000"></canvas>
 
             <style jsx>{`
-              @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Moirai+One&family=Song+Myung&display=swap');
-                
+              @font-face {
+                font-family: 'UhBeeSe_hyun';
+                src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSe_hyun.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+              }
+              
                 .flex {
                     margin-bottom: 20px;
                 }
