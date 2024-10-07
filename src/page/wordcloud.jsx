@@ -124,7 +124,9 @@ const WordCloudComponent = () => {
 
         console.log(wordCount);
 
-        if (wordCount >= 10) {
+        if (wordCount >= 29) {
+            weightFactor = 5;
+        } else if(wordCount >= 10) {
             weightFactor = 8;
         } else {
             weightFactor = 14;
@@ -135,7 +137,7 @@ const WordCloudComponent = () => {
         const options = {
             list: words,
             gridSize: 10,
-            weightFactor: 8,
+            weightFactor: weightFactor,
             rotateRatio: 0,
             rotationSteps: 2,
             shape: function(theta) {
@@ -178,6 +180,7 @@ const WordCloudComponent = () => {
                 count: Number(item.count) || 1 // count를 숫자로 변환, 기본값은 1
             }));
             setWordList(formattedData); // 파싱한 데이터로 wordList 업데이트
+            // console.log(`formattedData = ${JSON.parse(formattedData)}`);
         } catch (error) {
             console.error("Invalid JSON input:", error);
             alert("유효한 JSON 형식이 아닙니다. 다시 시도하세요.");
@@ -205,6 +208,11 @@ const WordCloudComponent = () => {
             {/*</div>*/}
             <div>
                 <div>
+                    <label htmlFor="">
+                        <input type="radio" />
+                    </label>
+                </div>
+                <div>
                     <textarea
                         className="text-json"
                         value={inputValue}
@@ -222,6 +230,13 @@ const WordCloudComponent = () => {
               @font-face {
                 font-family: 'UhBeeSe_hyun';
                 src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSe_hyun.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+              }
+
+              @font-face {
+                font-family: 'KCC-Ganpan';
+                src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
                 font-weight: normal;
                 font-style: normal;
               }
