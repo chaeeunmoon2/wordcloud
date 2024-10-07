@@ -145,7 +145,7 @@ const WordCloudComponent = () => {
                 return 1 / Math.sqrt((a * Math.sin(theta))**2 + (b * Math.cos(theta))**2);
             },
             ellipticity: 1.5,
-            shrinkToFit: true,
+            // shrinkToFit: true,
             minSize: 6,
             classes: 'word-cloud-item',
             // fontFamily: 'Bagel Fat One',
