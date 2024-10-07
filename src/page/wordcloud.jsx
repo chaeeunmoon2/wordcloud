@@ -106,7 +106,8 @@ const jsonData = [
     {"word": "사교성", "count": "3"},
     {"word": "목표 지향성", "count": "3"},
     {"word": "독립심", "count": "3"},
-    {"word": "기술 이해력", "count": "3"}
+    {"word": "기술 이해력", "count": "3"},
+    {"word": "기술 이해력2", "count": "3"},
 ];
 
 const WordCloudComponent = () => {
@@ -121,18 +122,20 @@ const WordCloudComponent = () => {
         const wordCount = wordList.length;
         let weightFactor = 10;
 
-        // console.log(wordCount);
+        console.log(wordCount);
 
-        if (wordCount > 28) {
+        if (wordCount >= 10) {
             weightFactor = 8;
         } else {
             weightFactor = 14;
         }
 
+        console.log(`weightFactor = ${weightFactor}`);
+
         const options = {
             list: words,
             gridSize: 10,
-            weightFactor: weightFactor,
+            weightFactor: 8,
             rotateRatio: 0,
             rotationSteps: 2,
             shape: function(theta) {
