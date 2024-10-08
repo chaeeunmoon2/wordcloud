@@ -126,10 +126,8 @@ const WordCloudComponent = () => {
 
         if (wordCount >= 29) {
             weightFactor = 5;
-        } else if(wordCount >= 10) {
-            weightFactor = 8;
         } else {
-            weightFactor = 14;
+            weightFactor = 8;
         }
 
         console.log(`weightFactor = ${weightFactor}`);
